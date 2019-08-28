@@ -7,23 +7,23 @@ Quick Setup
     Clone this project
 Backend:
 
-python3 -m venv [name_of_virtualenv] 
-source [path_to_virtualenv]/bin/activate 
+python3 -m venv [name_of_virtualenv]  
+source [path_to_virtualenv]/bin/activate  
 
-Move into the folder backend and execute
+Move into the folder backend and execute  
 
-pip3 install -r requirements.txt && python3 manage.py makemigrations && python3 manage.py migrate
+pip3 install -r requirements.txt && python3 manage.py makemigrations && python3 manage.py migrate  
 
-Create super user inside the project root and run server
-python3 manage.py createsuperuser && python3 manage.py runserver
+Create super user inside the project root and run server  
+python3 manage.py createsuperuser && python3 manage.py runserver  
 
-Create super user inside the project root and run server
-python3 manage.py createsuperuser
-python3 manage.py runserver
+Create super user inside the project root and run server  
+python3 manage.py createsuperuser  
+python3 manage.py runserver  
 
- Frontend:
+ Frontend:  
  
- In package directory, get all dependencies. Execute:
+ In package directory, get all dependencies. Execute:  
 
-npm install 
-npm start
+npm install   
+npm start  
