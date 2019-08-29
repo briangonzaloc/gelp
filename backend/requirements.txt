@@ -3,3 +3,7 @@ Django==2.2.4
 
 #Django REST framework
 djangorestframework==3.9.4
+
+#ONLY DEV
+#Tools
+django-extensions==2.1.4

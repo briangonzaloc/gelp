@@ -28,17 +28,28 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Apps
 
-INSTALLED_APPS = [
+DJANG_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
 ]
+
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'django_extensions', # ONLY DEV
+]
+
+LOCAL_APPS = [
+    'games',
+    'importer'
+]
+
+INSTALLED_APPS = DJANG_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
 #Models
-from django.contrib.auth.models import User
+from games.models import Game
 
+class GameSerializer(serializers.ModelSerializer):
+	""" Game Serializer """
 
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = User
-		fields = ['url', 'username', 'email', 'is_staff']
+		model  = Game
+		fields = '__all__'
