@@ -18,7 +18,7 @@ class Game(models.Model):
 
 	local_goals    = models.PositiveSmallIntegerField(default=0)
 	visiting_goals = models.PositiveSmallIntegerField(default=0)
-	datetime       = models.DateTimeField()
+	datetime       = models.DateTimeField(null=True)
 
 
 	#Stadium

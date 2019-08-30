@@ -8,5 +8,5 @@ class Player(models.Model):
 	height   = models.FloatField(null=True)
 
 	def __str__(self):
-		return '{} {}'.format(self.last_name, self.first_name)
+		return self.name
 
