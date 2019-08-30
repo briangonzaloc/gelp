@@ -4,6 +4,9 @@ Django==2.2.4
 #Django REST framework
 djangorestframework==3.9.4
 
+#CORS
+django-cors-headers==3.0.2
+
 #ONLY DEV
 #Tools
 django-extensions==2.1.4

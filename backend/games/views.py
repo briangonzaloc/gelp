@@ -13,9 +13,9 @@ from games.models import Game
 from games.serializers import GameSerializer
 
 
-class GameViewSet(mixins.ListModelMixin,
-				viewsets.GenericViewSet):
-	"""Game view set"""
-	queryset          = Game.objects.all()
-	serializers_class = GameSerializer
+# class GameViewSet(mixins.ListModelMixin,
+# 				viewsets.GenericViewSet):
+# 	"""Game view set"""
+# 	queryset         = Game.objects.all()
+# 	serializer_class = GameSerializer
 

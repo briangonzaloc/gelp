@@ -43,8 +43,11 @@ class ImportDataView(APIView):
 	def importDataPlayers(self, root):
 		self.clubes = []
 
-		start_code = 'Empezar marca de tiempo'
-		tags =  ['SORT_INFO', 'ALL_INSTANCES', 'ROWS']
+		start_code    = 'Empezar marca de tiempo'
+		tags          =  ['SORT_INFO', 'ALL_INSTANCES', 'ROWS']
+
+
+
 		all_instances = root.find('ALL_INSTANCES')
 		clubes  = []
 		actions = []
@@ -91,7 +94,7 @@ class ImportDataView(APIView):
 
 				# print(pos_x, pos_y, club_name, action, description)
 
-		import pdb; pdb.set_trace()
+		# import pdb; pdb.set_trace()
 		# Game.objects.create(local_club=clubes[0], visiting_club=clubes[1])
 
 

@@ -1,12 +1,22 @@
-from django.urls import path, include
+# from django.urls import path, include
 
+from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 
-from .views import GameViewSet
+from .views import games as game_views
+from .views import clubes as club_views
 
 router = DefaultRouter()
-router.register(r'games', GameViewSet, basename='games')
+router.register(r'clubes', club_views.ClubViewSet, basename='clubes')
+router.register(
+	r'clubes/(?P<pk_club>\d+)/games',
+	game_views.GameViewSet,
+	basename='games'
+)
 
-games_urls = [
-	path('', include(router.urls)),
+
+# router.register(r'games', game_views.GameViewSet, basename='games')
+
+urlpatterns = [
+	url(r'^', include(router.urls)),
 ]
