@@ -31,6 +31,7 @@ class ImportDataView(APIView):
 			club = Club.objects.get(name=club_name)  
 
 		self.clubes.append(club)
+		self.goals[club.name] = 0
 		return club
 
 	def get_player(self, name):
@@ -39,9 +40,16 @@ class ImportDataView(APIView):
 		else:
 			return Player.objects.get(name=name)
 
+	def verifyGoals(self, action):
+		action_goal = 'Goles'
+		if action.name == action_goal:
+			self.goals[action.club.name] += 1
+
+
 
 	def importDataPlayers(self, root):
 		self.clubes = []
+		self.goals  = {}
 
 		start_code    = 'Empezar marca de tiempo'
 		tags          =  ['SORT_INFO', 'ALL_INSTANCES', 'ROWS']
@@ -86,17 +94,18 @@ class ImportDataView(APIView):
 					player      = player,
 					club        = club,
 				)
+				self.verifyGoals(action)
+
 			actions.append(action)
 
-		game = Game.objects.create(local_club=self.clubes[0], visiting_club=self.clubes[1])
+		local_club     = self.clubes[0]
+		visiting_club  = self.clubes[1]
+		local_goals    = self.goals[local_club.name]
+		visiting_goals = self.goals[visiting_club.name]
+
+		game = Game.objects.create(local_club=local_club, visiting_club=visiting_club, local_goals=local_goals, visiting_goals=visiting_goals)
 		game.actions.add(*actions)
 		game.save()
-
-				# print(pos_x, pos_y, club_name, action, description)
-
-		# import pdb; pdb.set_trace()
-		# Game.objects.create(local_club=clubes[0], visiting_club=clubes[1])
-
 
 
 	def post(self,request):

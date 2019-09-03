@@ -28,4 +28,3 @@ class GameViewSet(mixins.ListModelMixin,
 
 	def get_queryset(self):
 		return Game.objects.filter(Q(visiting_club=self.club)| Q(local_club=self.club))
-

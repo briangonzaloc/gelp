@@ -37,6 +37,9 @@ const api = {
             return callApi(`clubes/${clubId}/`,{
                 method : 'DELETE'
             })
+        },
+        listGames(clubId){
+            return callApi(`clubes/${clubId}/games/`)
         }
     }
 }
