@@ -6,10 +6,10 @@ from rest_framework.views import APIView
 
 
 #Models 
-from games.models import Club
+from clubes.models import Club
 
 #Serializers
-from games.serializers import ClubSerializer
+from clubes.serializers import ClubSerializer
 
 
 class ClubViewSet(mixins.ListModelMixin,

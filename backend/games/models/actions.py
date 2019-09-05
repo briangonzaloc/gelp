@@ -11,13 +11,13 @@ class Action(models.Model):
 	description = models.CharField(max_length=50)
 
 	player = models.ForeignKey(
-		'games.Player',
+		'players.Player',
 		null=True,
 		on_delete=models.SET_NULL
 	)
 
 	club = models.ForeignKey(
-		'games.Club',
+		'clubes.Club',
 		null=True,
 		on_delete=models.SET_NULL
 	)

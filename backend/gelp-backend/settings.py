@@ -46,8 +46,10 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    'clubes',
+    'players',
     'games',
-    'importer'
+    'importer',
 ]
 
 INSTALLED_APPS = DJANG_APPS + THIRD_PARTY_APPS + LOCAL_APPS

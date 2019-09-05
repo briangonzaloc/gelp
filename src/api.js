@@ -41,6 +41,11 @@ const api = {
         listGames(clubId){
             return callApi(`clubes/${clubId}/games/`)
         }
+    },
+    games : {
+        get(gameId) {
+            return callApi(`game/${gameId}/`)
+        }
     }
 }
 

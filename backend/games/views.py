@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 
 #Models 
-from games.models import Game
+# from games.models import Game
 
 #Serializers
 from games.serializers import GameSerializer

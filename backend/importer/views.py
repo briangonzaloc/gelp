@@ -5,7 +5,9 @@ from rest_framework import status
 from rest_framework.response import Response
 
 #Models
-from games.models import (Player, Club, Action, Game)
+from games.models import (Game, Action)
+from players.models import Player
+from clubes.models import Club
 
 #Util
 import xml.etree.ElementTree as ET

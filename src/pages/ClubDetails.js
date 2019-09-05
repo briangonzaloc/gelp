@@ -34,8 +34,9 @@ class ClubDetails extends React.Component{
         }
     }
 
-    getGameDetails(gameId){
-        console.log('getGameDetails => ', gameId);
+    getGameDetails = async (gameId) => {
+        const game = await api.games.get(gameId);
+        console.log('getGameDetails => ', gameId, game);
     }
 
 

@@ -7,10 +7,11 @@ from rest_framework.generics import get_object_or_404
 from django.db.models import Q
 
 #Models 
-from games.models import Game, Club
+from games.models import Game
+from clubes.models import Club
 
 #Serializers
-from games.serializers import GameSerializer
+from games.serializers import GameSerializer, GameDetailsSerializer
 
 
 class GameViewSet(mixins.ListModelMixin,
@@ -28,3 +29,14 @@ class GameViewSet(mixins.ListModelMixin,
 
 	def get_queryset(self):
 		return Game.objects.filter(Q(visiting_club=self.club)| Q(local_club=self.club))
+
+class GameDetailViewSet(
+					mixins.RetrieveModelMixin,
+					viewsets.GenericViewSet):
+
+	serializer_class = GameDetailsSerializer
+	queryset = Game.objects.all()
+
+	@action(detail=True, methods=['get'])
+	def statistics(self, request):
+		pass

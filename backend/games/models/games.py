@@ -3,13 +3,13 @@ from django.db import models
 class Game(models.Model):
 
 	local_club = models.ForeignKey(
-		'games.Club', 
+		'clubes.Club', 
 		null=True,
 		on_delete=models.SET_NULL, 
 		related_name='local_club'
 	)
 	visiting_club = models.ForeignKey(
-		'games.Club', 
+		'clubes.Club', 
 		null=True,
 		on_delete=models.SET_NULL, 
 		related_name='visiting_club'

@@ -17,7 +17,8 @@ urlpatterns = [
 	# path('api/clubes/', include(games_urls) ),
 	path('api/importer/', include(importer_urls)),
 
-	path('api/',include( ('games.urls', 'clubes'), namespace='clubes'))
+	path('api/',include( ('games.urls', 'games'), namespace='games')),
+	path('api/',include( ('clubes.urls', 'clubes'), namespace='clubes'))
 
 	# url(r'^', include(router.urls)),
 	# url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
