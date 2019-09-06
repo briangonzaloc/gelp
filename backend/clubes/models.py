@@ -9,6 +9,6 @@ class Club(models.Model):
 	def __str__(self):
 		return self.name
 
-	def get_short_name(self):
-		return ''.join(character for character in self.name if character.isupper())
+	# def get_short_name(self):
+	# 	return ''.join(character for character in self.name if character.isupper())
 

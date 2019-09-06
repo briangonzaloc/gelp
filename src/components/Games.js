@@ -20,7 +20,7 @@ class Games extends React.Component{
                     <tbody>
                         {this.props.games.map( game=>{
                             return (
-                                <tr>
+                                <tr key={game.id}>
                                     <th scope="row">{game.local_club}</th>
                                     <td>{game.visiting_club}</td>
                                     <td>{game.local_goals} - {game.visiting_goals}</td>

@@ -44,9 +44,12 @@ const api = {
     },
     games : {
         get(gameId) {
-            return callApi(`game/${gameId}/`)
+            return callApi(`games/${gameId}/`)
+        },
+        getStatistics(gameId){
+            return callApi(`games/${gameId}/statistics/`)
         }
-    }
+    },
 }
 
 export default api;

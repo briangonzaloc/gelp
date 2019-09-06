@@ -15,6 +15,19 @@ class ActionSerializer(serializers.ModelSerializer):
 		model = Action
 		fields = '__all__'
 
+class ActionDetailsSerializer(serializers.ModelSerializer):
+
+	club = ClubSerializer(
+        read_only=True,
+        required=False,
+    )
+	# club = serializers.PrimaryKeyRelatedField(read_only=True)
+	num_action = serializers.IntegerField()
+	# club = serializers.IntegerField()
+	class Meta:
+		model = Action
+		fields = ('name', 'num_action',  'club')
+
 
 
 class GameSerializer(serializers.ModelSerializer):

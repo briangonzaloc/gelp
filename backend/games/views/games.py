@@ -4,7 +4,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import get_object_or_404
-from django.db.models import Q
+from django.db.models import Q, Count
 
 #Models 
 from games.models import Game
@@ -37,6 +37,9 @@ class GameDetailViewSet(
 	serializer_class = GameDetailsSerializer
 	queryset = Game.objects.all()
 
-	@action(detail=True, methods=['get'])
-	def statistics(self, request):
-		pass
+	# @action(detail=True, methods=['get'])
+	# def statistics(self, request, *args, **kwargs):
+	# 	game = self.get_object()
+	# 	data = GameDetailsSerializer(game).data
+	# 	# import pdb; pdb.set_trace()
+	# 	return Response(data, status=status.HTTP_200_OK)
