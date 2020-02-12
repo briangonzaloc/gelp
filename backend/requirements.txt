@@ -1,5 +1,5 @@
 #Django
-Django==2.2.4
+Django==2.2.10
 
 #Django REST framework
 djangorestframework==3.9.4
